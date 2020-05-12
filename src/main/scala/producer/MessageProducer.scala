@@ -1,6 +1,6 @@
 package producer
 
-import config.BrokerConfig.getDefaultConfig
+import config.BrokerConfig.getProducerConfigs
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
 
 object MessageProducer {
@@ -19,7 +19,7 @@ object MessageProducer {
   }
 
   private def createProducer:KafkaProducer[String, String] = {
-    val config = getDefaultConfig
+    val config = getProducerConfigs
     val producer = new KafkaProducer[String, String](config)
     producer
   }
