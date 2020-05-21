@@ -3,7 +3,7 @@ package producer
 import config.BrokerConfig.getProducerConfigs
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
 
-object MessageProducer {
+class MessageProducer {
 
   def sendTo(topicName: String, key: String, msgContent: String) = {
     val producer = createProducer
